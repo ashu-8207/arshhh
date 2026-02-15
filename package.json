@@ -1,0 +1,9 @@
+{
+  "name": "mindful-campus",
+  "version": "1.0.0",
+  "description": "Calming 3D mental wellness platform for students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
