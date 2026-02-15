@@ -1,0 +1,99 @@
+:root {
+  --bg: #07141f;
+  --glass: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.25);
+  --text: #eff8ff;
+  --muted: #a8c7d8;
+  --accent: #79e0ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #17445f, var(--bg));
+  color: var(--text);
+}
+
+#scene {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero { margin-bottom: 1.2rem; }
+.hero h1 { margin: 0; font-size: 2.2rem; }
+.sub { color: var(--muted); }
+blockquote {
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.note-box { background: rgba(121, 224, 255, 0.12); padding: 0.8rem; border-radius: 12px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text);
+  padding: 0.65rem;
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(90deg, #62d8ff, #79f3c6);
+  color: #00313b;
+  font-weight: 700;
+}
+
+.chat-box {
+  max-height: 240px;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.msg { margin-bottom: 0.65rem; }
+.msg.user { color: #caf4ff; }
+.msg.bot { color: #ddffd8; }
+.result { color: #eaffc1; font-weight: 600; }
+
+.timer-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  .timer-controls { grid-template-columns: repeat(2, 1fr); }
+}
