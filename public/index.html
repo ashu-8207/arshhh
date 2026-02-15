@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindful Campus | Student Mental Wellness</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="scene"></canvas>
+  <main class="container">
+    <header class="hero glass">
+      <h1>Mindful Campus</h1>
+      <p class="sub">A peaceful space for students to breathe, reconnect, and get support.</p>
+      <div class="note-box">
+        <h3>Today's Boost Note</h3>
+        <p id="dailyNote"></p>
+      </div>
+      <blockquote id="refreshQuote"></blockquote>
+      <section class="helpline">
+        <h3>24/7 Helpline Support</h3>
+        <ul id="helplineList"></ul>
+      </section>
+    </header>
+
+    <section class="grid">
+      <article class="glass">
+        <h2>Book a Therapy Session</h2>
+        <form id="bookingForm">
+          <input required name="studentName" placeholder="Your name" />
+          <input required type="email" name="email" placeholder="Email" />
+          <select required name="therapist" id="therapistSelect"></select>
+          <select required name="sessionType">
+            <option value="video-call">Video Call</option>
+            <option value="voice-call">Voice Call</option>
+          </select>
+          <input required type="datetime-local" name="slotTime" />
+          <textarea name="notes" placeholder="Anything you'd like your therapist to know"></textarea>
+          <button type="submit">Book Session</button>
+        </form>
+        <p id="bookingResult" class="result"></p>
+      </article>
+
+      <article class="glass">
+        <h2>AI Support Chatbot</h2>
+        <div id="chatMessages" class="chat-box"></div>
+        <form id="chatForm" class="chat-form">
+          <input name="message" required placeholder="Share what you're feeling..." />
+          <button type="submit">Send</button>
+        </form>
+      </article>
+
+      <article class="glass">
+        <h2>Meditation Timer + Relaxing Sound</h2>
+        <div class="timer-controls">
+          <button data-min="5">5 min</button>
+          <button data-min="10">10 min</button>
+          <button data-min="15">15 min</button>
+          <button id="stopMeditation">Stop</button>
+        </div>
+        <p id="timerDisplay">Select a timer to begin.</p>
+      </article>
+
+      <article class="glass">
+        <h2>Mental Health State Check-In</h2>
+        <form id="testForm">
+          <input required name="studentName" placeholder="Your name" />
+          <input name="email" type="email" placeholder="Email (optional)" />
+          <label>How manageable does stress feel lately? (1-5)</label>
+          <input required type="number" min="1" max="5" name="stressLevel" />
+          <label>How restful has your sleep been? (1-5)</label>
+          <input required type="number" min="1" max="5" name="sleepQuality" />
+          <label>How supported do you feel by people around you? (1-5)</label>
+          <input required type="number" min="1" max="5" name="supportLevel" />
+          <label>How steady has your mood felt? (1-5)</label>
+          <input required type="number" min="1" max="5" name="moodStability" />
+          <label>How focused have you felt with studies/life? (1-5)</label>
+          <input required type="number" min="1" max="5" name="focusLevel" />
+          <button type="submit">Check My Wellness State</button>
+        </form>
+        <p id="testResult" class="result"></p>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
